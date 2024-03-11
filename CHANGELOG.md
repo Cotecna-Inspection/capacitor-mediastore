@@ -2,7 +2,7 @@
 This document contains the historical changes of the **@cotecna/capacitor-mediastore** npm public library.
 
 
-## [1.0.0] - 2023-02-16
+## [1.0.0] - 2024-03-11
 ### Added
 - Upgrade to Capacitor 6
 
