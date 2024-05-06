@@ -1,24 +1,10 @@
 package com.cotecna.capacitor.mediastore;
 
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.net.Uri;
-import android.os.Build;
-import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @CapacitorPlugin(name = "Mediastore")
 public class MediastorePlugin extends Plugin {
@@ -55,11 +41,6 @@ public class MediastorePlugin extends Plugin {
 
     @PluginMethod
     public void saveToDownloads(PluginCall call) {
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            call.reject("method requires API 29+");
-            return;
-        }
 
         String fileName = call.getString("filename");
         String path = call.getString("path");

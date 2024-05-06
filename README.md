@@ -1,6 +1,6 @@
 # @cotecna/capacitor-mediastore
 
-Manage Android media files
+Manage operations over hand held devices' (Web | Android | IOS) media files
 
 ## Install
 
@@ -23,17 +23,21 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
+Defines a Plugin for handling Media (Video, Photo, File) related actions
+
 ### savePicture(...)
 
 ```typescript
-savePicture(options: SavePictureOptions) => any
+savePicture(options: SavePictureOptions) => Promise<SaveMediaResult>
 ```
 
-| Param         | Type                                                              |
-| ------------- | ----------------------------------------------------------------- |
-| **`options`** | <code><a href="#savepictureoptions">SavePictureOptions</a></code> |
+Saves Pictures onto Devices' Media Store
 
-**Returns:** <code>any</code>
+| Param         | Type                                                              | Description                                          |
+| ------------- | ----------------------------------------------------------------- | ---------------------------------------------------- |
+| **`options`** | <code><a href="#savepictureoptions">SavePictureOptions</a></code> | Save Picture Options. Album, File Name and File Path |
+
+**Returns:** <code>Promise&lt;<a href="#savemediaresult">SaveMediaResult</a>&gt;</code>
 
 --------------------
 
@@ -41,14 +45,16 @@ savePicture(options: SavePictureOptions) => any
 ### saveToDownloads(...)
 
 ```typescript
-saveToDownloads(options: SaveToDownloadsOptions) => any
+saveToDownloads(options: SaveToDownloadsOptions) => Promise<SaveMediaResult>
 ```
 
-| Param         | Type                                                                      |
-| ------------- | ------------------------------------------------------------------------- |
-| **`options`** | <code><a href="#savetodownloadsoptions">SaveToDownloadsOptions</a></code> |
+Saves Files onto Devices' Downloads Folder
 
-**Returns:** <code>any</code>
+| Param         | Type                                                                      | Description                                    |
+| ------------- | ------------------------------------------------------------------------- | ---------------------------------------------- |
+| **`options`** | <code><a href="#savetodownloadsoptions">SaveToDownloadsOptions</a></code> | Save Download Options. File Name and File Path |
+
+**Returns:** <code>Promise&lt;<a href="#savemediaresult">SaveMediaResult</a>&gt;</code>
 
 --------------------
 
@@ -56,14 +62,16 @@ saveToDownloads(options: SaveToDownloadsOptions) => any
 ### saveVideo(...)
 
 ```typescript
-saveVideo(options: SaveVideoOptions) => any
+saveVideo(options: SaveVideoOptions) => Promise<SaveMediaResult>
 ```
 
-| Param         | Type                                                          |
-| ------------- | ------------------------------------------------------------- |
-| **`options`** | <code><a href="#savevideooptions">SaveVideoOptions</a></code> |
+Saves Videos onto Devices' Media Store
 
-**Returns:** <code>any</code>
+| Param         | Type                                                          | Description                    |
+| ------------- | ------------------------------------------------------------- | ------------------------------ |
+| **`options`** | <code><a href="#savevideooptions">SaveVideoOptions</a></code> | Album, File Name and File Path |
+
+**Returns:** <code>Promise&lt;<a href="#savemediaresult">SaveMediaResult</a>&gt;</code>
 
 --------------------
 
@@ -71,50 +79,44 @@ saveVideo(options: SaveVideoOptions) => any
 ### Interfaces
 
 
+#### SaveMediaResult
+
+Defines a Media, Save Result. Uri
+
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`uri`** | <code>string</code> |
+
+
 #### SavePictureOptions
+
+Defines a Media, Save Picture, Options. Album, File Name and File Path
 
 | Prop           | Type                |
 | -------------- | ------------------- |
 | **`album`**    | <code>string</code> |
 | **`filename`** | <code>string</code> |
 | **`path`**     | <code>string</code> |
-
-
-#### SavePictureResult
-
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`uri`** | <code>string</code> |
 
 
 #### SaveToDownloadsOptions
 
+Defines a Media, Save Download, Options. File Name and File Path
+
 | Prop           | Type                |
 | -------------- | ------------------- |
 | **`filename`** | <code>string</code> |
 | **`path`**     | <code>string</code> |
 
 
-#### SaveToDownloadsResult
-
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`uri`** | <code>string</code> |
-
-
 #### SaveVideoOptions
+
+Defines a Media, Save Picture, Options. Album, File Name and File Path
 
 | Prop           | Type                |
 | -------------- | ------------------- |
 | **`album`**    | <code>string</code> |
 | **`filename`** | <code>string</code> |
 | **`path`**     | <code>string</code> |
-
-
-#### SaveVideoResult
-
-| Prop      | Type                |
-| --------- | ------------------- |
-| **`uri`** | <code>string</code> |
 
 </docgen-api>
