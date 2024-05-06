@@ -1,6 +1,6 @@
 # @cotecna/capacitor-mediastore
 
-Manage hand held devices' (Web | Android | IOS) media files
+Manage operations over hand held devices' (Web | Android | IOS) media files
 
 ## Install
 
